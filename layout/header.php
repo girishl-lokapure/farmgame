@@ -15,6 +15,9 @@
         <link href="css/common.css" rel="stylesheet" type="text/css"/>
         <script src="scripts/jquery.min.js" type="text/javascript"></script>
         <script src="scripts/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var cache_folder = <?php echo $_SESSION['userid'] ?>;
+        </script>
         <script src="scripts/custom.js" type="text/javascript"></script>
     </head>
 

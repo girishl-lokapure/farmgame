@@ -18,6 +18,6 @@ define('FARM_ELEMENTS_ARRAY', serialize([
 
 
 //cache params
-define('CACHE_ELEMENTS', 'cache/elements.json');
-define('CACHE_ELEMENTS_LIFE', 'cache/life.json');
-define('CACHE_ROUNDS', 'cache/round.json');
+define('CACHE_ELEMENTS', 'cache/' . $_SESSION['userid'] . '/elements.json');
+define('CACHE_ELEMENTS_LIFE', 'cache/' . $_SESSION['userid'] . '/life.json');
+define('CACHE_ROUNDS', 'cache/' . $_SESSION['userid'] . '/round.json');

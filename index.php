@@ -9,7 +9,13 @@
 
 //ini_set('display_errors', 1);
 //error_reporting(E_ALL);
-require 'game/config/config.php';
+session_start();
+if (empty(@$_SESSION['userid'])) {
+    $_SESSION['userid'] = time();
+    if (!file_exists('game/cache/' . $_SESSION['userid'])) {        
+        mkdir('game/cache/' . $_SESSION['userid'], 0777, true);
+    }
+}
 ?>
 
 
@@ -46,7 +52,7 @@ require 'game/config/config.php';
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                 </tbody>
             </table>
         </div>

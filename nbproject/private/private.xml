@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/game/game/Feed.php</file>
-            <file>file:/C:/xampp/htdocs/game/css/common.css</file>
-            <file>file:/C:/xampp/htdocs/game/scripts/custom.js</file>
-            <file>file:/C:/xampp/htdocs/game/game/cache/cache.json</file>
-            <file>file:/C:/xampp/htdocs/game/index.php</file>
-            <file>file:/C:/xampp/htdocs/game/Reset.php</file>
-            <file>file:/C:/xampp/htdocs/game/game/config/config.php</file>
+            <file>file:/C:/xampp/htdocs/farmgame/layout/header.php</file>
+            <file>file:/C:/xampp/htdocs/farmgame/game/Farmer.php</file>
+            <file>file:/C:/xampp/htdocs/farmgame/game/FarmElements.php</file>
+            <file>file:/C:/xampp/htdocs/farmgame/game/Bunny.php</file>
+            <file>file:/C:/xampp/htdocs/farmgame/game/Helper.php</file>
+            <file>file:/C:/xampp/htdocs/farmgame/game/Feed.php</file>
+            <file>file:/C:/xampp/htdocs/farmgame/game/Cow.php</file>
+            <file>file:/C:/xampp/htdocs/farmgame/index.php</file>
         </group>
     </open-files>
 </project-private>

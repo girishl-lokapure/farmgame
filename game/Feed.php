@@ -4,10 +4,11 @@
  * Author     : Girish Lokapure (lokapure.girish at gmail.com)
  * Description: Framegame
  */
-require_once 'config/config.php';
+session_start();
 foreach (glob("*.php") as $file) {
     require_once $file;
 }
+require_once 'config/config.php';
 
 class Feed {
 

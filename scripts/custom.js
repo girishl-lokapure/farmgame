@@ -6,9 +6,6 @@
 
 $(document).ready(function () {
     $.ajaxSetup({cache: false});
-    if ($(".game_status").val() == "WON" || $(".game_status").val() == "LOST") {
-        $("#feed").attr("disabled", "disabled");
-    }
     var row = '<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
     var eq = 0;
 
@@ -45,7 +42,6 @@ $(document).ready(function () {
 
 
     $("#feed").on("click", function () {
-        var fedLife = '';
         var feedUrl = "game/feed.php";
         $(".feed_table").find("tbody").html('');
         $.ajax({
@@ -53,7 +49,6 @@ $(document).ready(function () {
             async: true,
             success: function (response) {
                 response = jQuery.parseJSON(response);
-                console.log(response);
                 if (response == "win") {
                     $("#result").append('Game over :  You Won, reset the game to play again');
                     $("#feed").attr("disabled", "disabled");
@@ -62,12 +57,17 @@ $(document).ready(function () {
                     $("#result").append('Game over :  You Lost, reset the game to play again');
                     $("#feed").attr("disabled", "disabled");
 
-                } else {                    
+                } else {
+                    var length = response.length;
+
                     $.each(response, function (i, item) {
                         $(".feed_table").find("tbody").append(row);
                         $(".feed_table").find("tbody tr:last").find("td:eq(0)").html(item.round);
                         $(".feed_table").find("tbody tr:last").find("td:eq(" + get_eq(item.element) + ")").html('<img style="height:20px;width:20px;" src="images/food.png" alt="Fed"/>');
-                        check_dead();
+                        if (i === (length - 1)) {
+                            check_dead();
+                        }
+
                     });
                 }
             }
@@ -86,15 +86,16 @@ $(document).ready(function () {
     });
 
     function check_dead() {
-        $.getJSON("game/cache/life.json", function (data) {
+        $.getJSON("game/cache/" + cache_folder + "/life.json", function (data) {
 
             $.each(data, function (key, val) {
                 if (val == 0) {
-
                     $(".feed_table").find("tbody tr").find("td:eq(" + get_eq(key) + ")").addClass('dead')
                 }
-            });
-        });
+            }
+            );
+        }
+        );
     }
     check_dead();
 });
